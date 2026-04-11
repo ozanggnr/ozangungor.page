@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="mb-10">
-      <div className="flex items-center gap-2 mb-4 text-sm md:text-lg opacity-80 opacity-indicator">
+      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-4 text-sm md:text-lg opacity-80 opacity-indicator">
         <span className="text-green-500">visitor@ozangungor</span>
         <span className="text-white">:</span>
         <span className="text-blue-400">~</span>

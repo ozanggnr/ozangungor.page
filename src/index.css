@@ -22,10 +22,12 @@
     padding: 0;
     overflow-x: hidden;
     text-shadow: 0 0 5px rgba(0, 255, 159, 0.5);
+    cursor: none;
   }
 
   * {
     border-color: rgba(0, 255, 159, 0.3);
+    cursor: none !important;
   }
 
   h1, h2, h3, h4, h5, h6 {

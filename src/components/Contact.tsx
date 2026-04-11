@@ -3,7 +3,7 @@ import React from 'react';
 const Contact: React.FC = () => {
   return (
     <div className="mb-10">
-      <div className="flex items-center gap-2 mb-4 text-sm md:text-lg opacity-80">
+      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-4 text-sm md:text-lg opacity-80">
         <span className="text-green-500">visitor@ozangungor</span>
         <span className="text-white">:</span>
         <span className="text-blue-400">~</span>
@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
       </div>
       
       <div className="flex flex-col space-y-2 overflow-x-auto terminal-scrollbar pb-2">
-        <a href="mailto:ozan.gungor@ug.bilkent.edu.tr" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
+        <a href="mailto:ozan.gungor@ug.bilkent.edu.tr" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block break-all">
           <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 29</span>
           <span className="text-blue-400 font-bold">email</span> {'->'} <span className="opacity-80 underline">ozan.gungor@ug.bilkent.edu.tr</span>
         </a>
