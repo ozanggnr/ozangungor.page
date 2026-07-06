@@ -84,17 +84,17 @@ const projects = [
   {
     name: 'Food-Ordering-System',
     emoji: '🍕',
-    tagline: 'Full-Stack Restaurant Ordering Website',
-    tech: ['Java', 'HTML', 'CSS'],
+    tagline: 'Java Desktop Food Ordering Application',
+    tech: ['Java'],
     github: 'https://github.com/ozanggnr/Food-Ordering-System-',
     description:
-      'A web-based food ordering system developed for a Java programming course. Users can browse restaurant menus, add items to a cart, and place orders through a clean HTML/CSS frontend backed by a Java server. The project demonstrates core full-stack concepts: HTTP request handling, session management, business logic separation, and dynamic page rendering without a heavyweight framework.',
+      'A fully Java-based food ordering desktop application developed for a Java programming course. Built with a Java UI, it replicates the experience of modern food ordering apps — browsing menus, selecting items, managing a cart, and placing orders — all within a native Java interface. The project demonstrates object-oriented design, event-driven UI programming, and application state management in pure Java.',
     bullets: [
-      'Menu browsing with category filtering and item detail pages',
-      'Shopping cart with real-time item count and total calculation',
-      'Java backend handling HTTP requests, sessions, and order processing',
-      'Order history persistence using file-based or in-memory storage',
-      'Responsive HTML/CSS frontend with a clean, user-friendly layout',
+      'Desktop food ordering app built entirely in Java with a Java UI',
+      'Menu browsing by category with item listing and selection',
+      'Shopping cart with item management and order total calculation',
+      'Order placement flow mimicking real-world food ordering apps',
+      'Object-oriented architecture with clean separation of UI, logic, and data layers',
     ],
   },
   {
