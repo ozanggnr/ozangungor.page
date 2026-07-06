@@ -10,20 +10,28 @@ const Contact: React.FC = () => {
         <span className="text-white">$</span>
         <span>ls -l ./contact</span>
       </div>
-      
+
       <div className="flex flex-col space-y-2 overflow-x-auto terminal-scrollbar pb-2">
-        <a href="mailto:ozan.gungor@ug.bilkent.edu.tr" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block break-all">
+        <a href="mailto:ozanggnr@gmail.com" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block break-all">
+          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 22</span>
+          <span className="text-blue-400 font-bold">email</span> {'->'} <span className="opacity-80 underline">ozanggnr@gmail.com</span>
+        </a>
+        <a href="https://github.com/ozanggnr" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
           <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 29</span>
-          <span className="text-blue-400 font-bold">email</span> {'->'} <span className="opacity-80 underline">ozan.gungor@ug.bilkent.edu.tr</span>
+          <span className="text-blue-400 font-bold">github</span> {'->'} <span className="opacity-80 underline">github.com/ozanggnr</span>
         </a>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 18</span>
-          <span className="text-blue-400 font-bold">github</span> {'->'} <span className="opacity-80 underline">GitHub Profile</span>
+        <a href="https://linkedin.com/in/ozanggnr" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
+          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 32</span>
+          <span className="text-blue-400 font-bold">linkedin</span> {'->'} <span className="opacity-80 underline">linkedin.com/in/ozanggnr</span>
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 25</span>
-          <span className="text-blue-400 font-bold">linkedin</span> {'->'} <span className="opacity-80 underline">LinkedIn Profile</span>
+        <a href="tel:+905336628108" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
+          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 16</span>
+          <span className="text-blue-400 font-bold">phone</span> {'->'} <span className="opacity-80 underline">+90 533 662 81 08</span>
         </a>
+        <div className="p-2 -ml-2 text-sm opacity-50">
+          <span className="hidden md:inline">lrwxrwxrwx 1 ozan ozan 14 </span>
+          <span className="text-blue-400 font-bold">location</span> {'-> '} Ankara, Turkey
+        </div>
       </div>
     </div>
   );

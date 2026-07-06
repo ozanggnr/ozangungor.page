@@ -5,13 +5,13 @@ const experiences = [
     company: 'Wellbees',
     location: 'Istanbul, Turkey',
     role: 'Android Developer Intern',
-    dates: 'July 2024 – Aug 2024 \n July 2025 – Sep 2025',
+    dates: 'July 2024 – Aug 2024\nJuly 2025 – Sep 2025',
     bullets: [
-      'Researched Android application architecture and corporate development workflows.',
-      'Studied Jetpack Compose fundamentals and modern Android UI paradigms.',
-      'Developed a standalone Android application using Kotlin and Jetpack Compose.',
-      'Redesigned existing application screens using Jetpack Compose, improving UI consistency.',
-      'Gained hands-on experience with Android dev lifecycle, version control, and team workflows.'
+      'Developed Android applications using Kotlin and Jetpack Compose for a real-world corporate product.',
+      'Redesigned existing UI screens with modern Compose architecture, improving consistency and UX.',
+      'Built new standalone Android features from specification through code review to production.',
+      'Worked with Android lifecycle management, state handling, and reactive UI patterns.',
+      'Collaborated in a Git-based team development workflow with code reviews and iterative releases.',
     ]
   },
   {
@@ -20,11 +20,11 @@ const experiences = [
     role: 'Software Developer Intern',
     dates: 'Sep 2024 – Dec 2024',
     bullets: [
-      'Contributed to the complete redevelopment of a legacy banking web application.',
-      'Implemented frontend and backend components as part of a full-stack process.',
-      'Participated in technical and business meetings within a corporate banking environment.',
-      'Collaborated with cross-functional teams to understand requirements and architecture.',
-      'Gained exposure to design, implementation, testing, and deployment stages.'
+      'Contributed to the full redevelopment of a legacy banking web application in a large enterprise team.',
+      'Developed frontend and backend components in a full-stack environment serving millions of users.',
+      'Collaborated across teams to understand business requirements and translate them into system design.',
+      'Participated in implementation, code review, and system architecture discussions.',
+      'Gained exposure to enterprise-grade security standards and deployment practices in banking infrastructure.',
     ]
   }
 ];

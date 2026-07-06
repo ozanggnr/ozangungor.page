@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import BootSequence from './components/BootSequence';
@@ -40,6 +41,8 @@ function App() {
             <Hero />
             <div className="w-full h-px bg-primary/20 my-8"></div>
             <Experience />
+            <div className="w-full h-px bg-primary/20 my-8"></div>
+            <Projects />
             <div className="w-full h-px bg-primary/20 my-8"></div>
             <Skills />
             <div className="w-full h-px bg-primary/20 my-8"></div>
