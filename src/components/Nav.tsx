@@ -3,10 +3,11 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import { EASE } from './motionUtils';
 
 const links = [
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'experience', label: 'Experience', short: 'Exp' },
+  { id: 'projects', label: 'Projects', short: 'Work' },
+  { id: 'skills', label: 'Skills', short: 'Skills' },
+  { id: 'certifications', label: 'Certifications', short: 'Certs' },
+  { id: 'contact', label: 'Contact', short: 'Contact' },
 ];
 
 export default function Nav() {
@@ -37,18 +38,18 @@ export default function Nav() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
-        className="fixed inset-x-0 top-4 z-40 flex justify-center px-4"
+        className="fixed inset-x-0 top-3 sm:top-4 z-40 flex justify-center px-3 sm:px-4"
       >
         <nav
           aria-label="Primary"
-          className="flex items-center gap-1 rounded-full border border-white/10 bg-surface-1/70 p-1.5 pl-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+          className="flex items-center gap-0.5 sm:gap-1 rounded-full border border-white/10 bg-surface-1/80 p-1 pl-2.5 sm:p-1.5 sm:pl-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl max-w-[calc(100vw-1.5rem)]"
         >
           <a
             href="#top"
-            className="mr-1 flex items-center gap-2 pr-2 text-sm font-semibold tracking-tight text-ink"
+            className="mr-0.5 sm:mr-1 flex items-center gap-1.5 sm:gap-2 pr-1.5 sm:pr-2 text-sm font-semibold tracking-tight text-ink"
             aria-label="Ozan Güngör, back to top"
           >
-            <span className="grid size-6 place-items-center rounded-md bg-accent text-[11px] font-bold text-white">
+            <span className="grid size-5 sm:size-6 place-items-center rounded-md bg-accent text-[10px] sm:text-[11px] font-bold text-white">
               OG
             </span>
           </a>
@@ -57,8 +58,8 @@ export default function Nav() {
               key={l.id}
               href={`#${l.id}`}
               aria-current={active === l.id ? 'true' : undefined}
-              className={`relative hidden rounded-full px-3.5 py-1.5 text-sm transition-colors duration-300 sm:block ${
-                active === l.id ? 'text-ink' : 'text-ink-subtle hover:text-ink'
+              className={`relative rounded-full px-2 py-1 text-xs transition-colors duration-300 sm:px-3.5 sm:py-1.5 sm:text-sm ${
+                active === l.id ? 'text-ink font-medium' : 'text-ink-subtle hover:text-ink'
               }`}
             >
               {active === l.id && (
@@ -68,12 +69,13 @@ export default function Nav() {
                   className="absolute inset-0 rounded-full bg-white/10"
                 />
               )}
-              <span className="relative">{l.label}</span>
+              <span className="relative hidden sm:inline">{l.label}</span>
+              <span className="relative inline sm:hidden">{l.short}</span>
             </a>
           ))}
           <a
             href="mailto:ozanggnr@gmail.com"
-            className="ml-1 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-canvas transition-transform duration-200 hover:scale-[1.04] active:scale-95"
+            className="ml-1 hidden rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-canvas transition-transform duration-200 hover:scale-[1.04] active:scale-95 sm:block"
           >
             Say hi
           </a>

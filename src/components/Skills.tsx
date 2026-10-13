@@ -67,7 +67,7 @@ export default function Skills() {
                 className="spotlight h-full rounded-3xl border border-hairline bg-surface-1 p-7"
               >
                 <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">{g.label}</h3>
-                <ul className={`mt-6 grid gap-x-8 gap-y-4 ${g.span === 'md:col-span-2' ? 'sm:grid-cols-2' : ''}`}>
+                <ul className={`mt-6 grid gap-x-6 gap-y-4 ${g.span === 'md:col-span-2' ? 'grid-cols-2' : ''}`}>
                   {g.items.map((it) => (
                     <li key={it.name}>
                       <span className="font-medium text-ink">{it.name}</span>

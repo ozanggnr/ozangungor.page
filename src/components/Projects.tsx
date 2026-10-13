@@ -19,7 +19,7 @@ function Card({ p, i, onOpen }: { p: Project; i: number; onOpen: () => void }) {
         onClick={onOpen}
         onMouseMove={trackPointer}
         aria-label={`Open details for ${p.name}`}
-        className="spotlight group flex h-full min-h-[240px] w-full flex-col rounded-3xl border border-hairline bg-surface-1 p-7 text-left transition-[transform,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-hairline-strong active:scale-[0.99]"
+        className="spotlight group flex h-full min-h-[200px] md:min-h-[240px] w-full flex-col rounded-3xl border border-hairline bg-surface-1 p-7 text-left transition-[transform,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-hairline-strong active:scale-[0.99]"
       >
         <div className="flex items-start justify-between">
           <span className="font-mono text-xs tabular-nums text-ink-faint">{String(i + 1).padStart(2, '0')}</span>
@@ -30,7 +30,7 @@ function Card({ p, i, onOpen }: { p: Project; i: number; onOpen: () => void }) {
             ↗
           </span>
         </div>
-        <h3 className="mt-auto pt-10 text-2xl font-semibold tracking-tight">{p.name}</h3>
+        <h3 className="mt-auto pt-8 md:pt-10 text-2xl font-semibold tracking-tight">{p.name}</h3>
         <p className="mt-2 text-ink-subtle">{p.tagline}</p>
         <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">
           {p.tech.map((t) => (

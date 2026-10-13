@@ -16,7 +16,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-16 pt-32">
+    <section id="top" className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-10 pt-28 md:pt-32">
       {/* Atmosphere */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="grid-lines absolute inset-0" />
@@ -35,15 +35,15 @@ export default function Hero() {
             <span className="absolute inset-0 animate-pulse-dot rounded-full bg-success" />
             <span className="relative size-2 rounded-full bg-success" />
           </span>
-          Open to internships &amp; new grad roles
+          Bilkent University Graduate · Open to engineering opportunities
         </motion.div>
 
-        <h1 className="text-[clamp(3.25rem,11vw,9rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
+        <h1 className="text-[clamp(3.25rem,11vw,9rem)] font-semibold leading-[1.08] sm:leading-[1.04] tracking-[-0.045em]">
           {words.map((w, wi) => (
-            <span key={w} className="block overflow-hidden pb-[0.08em]">
+            <span key={w} className="block overflow-hidden pt-[0.05em] pb-[0.32em] -mb-[0.26em]">
               <motion.span
                 className={`block ${wi === 1 ? 'text-gradient-accent' : 'text-gradient'}`}
-                initial={{ y: '110%', rotate: 3 }}
+                initial={{ y: '120%', rotate: 2 }}
                 animate={{ y: 0, rotate: 0 }}
                 transition={{ duration: 1.1, delay: 0.35 + wi * 0.12, ease: EASE }}
               >
@@ -57,11 +57,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.85, ease: EASE }}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-ink-subtle md:text-xl"
+          className="mt-10 sm:mt-12 md:mt-14 max-w-xl text-lg leading-relaxed text-ink-subtle md:text-xl"
         >
-          Android &amp; full-stack developer studying Information Systems and Technologies at{' '}
-          <span className="text-ink">Bilkent University</span>. I build native mobile apps and the
-          backends behind them.
+          Android &amp; full-stack developer graduated from{' '}
+          <span className="text-ink">Bilkent University</span> (Information Systems and Technologies).
+          I build native mobile apps and the backends behind them.
         </motion.p>
 
         <motion.div
@@ -104,7 +104,7 @@ export default function Hero() {
       </div>
 
       {/* Tech marquee */}
-      <div className="relative mt-16" aria-hidden="true">
+      <div className="relative mt-12" aria-hidden="true">
         <div className="marquee-mask overflow-hidden">
           <div className="flex w-max animate-marquee gap-3 will-change-transform">
             {[...stack, ...stack].map((t, i) => (

@@ -4,7 +4,7 @@ import { trackPointer } from './motionUtils';
 const links = [
   { label: 'Email', value: 'ozanggnr@gmail.com', href: 'mailto:ozanggnr@gmail.com' },
   { label: 'GitHub', value: 'github.com/ozanggnr', href: 'https://github.com/ozanggnr', external: true },
-  { label: 'LinkedIn', value: 'linkedin.com/in/ozanggnr', href: 'https://linkedin.com/in/ozanggnr', external: true },
+  { label: 'LinkedIn', value: 'linkedin.com/in/ozangngr', href: 'https://www.linkedin.com/in/ozangngr/', external: true },
   { label: 'Phone', value: '+90 533 662 81 08', href: 'tel:+905336628108' },
 ];
 
@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
           <p className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-subtle">
-            <span className="text-accent-soft">04</span>
+            <span className="text-accent-soft">05</span>
             <span className="h-px w-8 bg-hairline-strong" aria-hidden="true" />
             Contact
           </p>
