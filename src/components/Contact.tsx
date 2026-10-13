@@ -1,40 +1,56 @@
-import React from 'react';
+import { Reveal } from './ui';
+import { trackPointer } from './motionUtils';
 
-const Contact: React.FC = () => {
+const links = [
+  { label: 'Email', value: 'ozanggnr@gmail.com', href: 'mailto:ozanggnr@gmail.com' },
+  { label: 'GitHub', value: 'github.com/ozanggnr', href: 'https://github.com/ozanggnr', external: true },
+  { label: 'LinkedIn', value: 'linkedin.com/in/ozanggnr', href: 'https://linkedin.com/in/ozanggnr', external: true },
+  { label: 'Phone', value: '+90 533 662 81 08', href: 'tel:+905336628108' },
+];
+
+export default function Contact() {
   return (
-    <div className="mb-10">
-      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-4 text-sm md:text-lg opacity-80">
-        <span className="text-green-500">visitor@ozangungor</span>
-        <span className="text-white">:</span>
-        <span className="text-blue-400">~</span>
-        <span className="text-white">$</span>
-        <span>ls -l ./contact</span>
-      </div>
+    <section id="contact" className="relative overflow-hidden px-6 pb-16 pt-28 md:pt-40">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[60vh] bg-[radial-gradient(ellipse_60%_80%_at_50%_100%,rgba(94,106,210,0.28),transparent)]" />
+      <div className="relative mx-auto max-w-6xl">
+        <Reveal>
+          <p className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-subtle">
+            <span className="text-accent-soft">04</span>
+            <span className="h-px w-8 bg-hairline-strong" aria-hidden="true" />
+            Contact
+          </p>
+          <h2 className="max-w-4xl text-5xl font-semibold leading-[1] tracking-[-0.04em] md:text-8xl">
+            Let&apos;s build <span className="text-gradient-accent">something great.</span>
+          </h2>
+          <p className="mt-6 text-lg text-ink-subtle">Based in Ankara, Turkey · Replies within a day.</p>
+        </Reveal>
 
-      <div className="flex flex-col space-y-2 overflow-x-auto terminal-scrollbar pb-2">
-        <a href="mailto:ozanggnr@gmail.com" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block break-all">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 22</span>
-          <span className="text-blue-400 font-bold">email</span> {'->'} <span className="opacity-80 underline">ozanggnr@gmail.com</span>
-        </a>
-        <a href="https://github.com/ozanggnr" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 29</span>
-          <span className="text-blue-400 font-bold">github</span> {'->'} <span className="opacity-80 underline">github.com/ozanggnr</span>
-        </a>
-        <a href="https://linkedin.com/in/ozanggnr" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 32</span>
-          <span className="text-blue-400 font-bold">linkedin</span> {'->'} <span className="opacity-80 underline">linkedin.com/in/ozanggnr</span>
-        </a>
-        <a href="tel:+905336628108" className="hover:text-white hover:bg-primary/20 p-2 -ml-2 rounded transition-colors w-max block">
-          <span className="opacity-50 mr-4 hidden md:inline">lrwxrwxrwx 1 ozan ozan 16</span>
-          <span className="text-blue-400 font-bold">phone</span> {'->'} <span className="opacity-80 underline">+90 533 662 81 08</span>
-        </a>
-        <div className="p-2 -ml-2 text-sm opacity-50">
-          <span className="hidden md:inline">lrwxrwxrwx 1 ozan ozan 14 </span>
-          <span className="text-blue-400 font-bold">location</span> {'-> '} Ankara, Turkey
-        </div>
+        <ul className="mt-16 grid gap-3 sm:grid-cols-2">
+          {links.map((l, i) => (
+            <Reveal key={l.label} delay={i * 0.06} className="contents">
+              <li>
+                <a
+                  href={l.href}
+                  onMouseMove={trackPointer}
+                  {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="spotlight group flex items-center justify-between gap-4 rounded-2xl border border-hairline bg-surface-1 p-6 transition-[transform,border-color] duration-300 hover:border-hairline-strong active:scale-[0.99]"
+                >
+                  <span className="min-w-0">
+                    <span className="block font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">{l.label}</span>
+                    <span className="mt-1 block truncate text-lg text-ink md:text-xl">{l.value}</span>
+                  </span>
+                  <span aria-hidden="true" className="text-xl text-ink-subtle transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-ink">↗</span>
+                </a>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
+
+        <footer className="mt-24 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6 text-sm text-ink-faint">
+          <p>© {new Date().getFullYear()} Ozan Güngör</p>
+          <a href="#top" className="transition-colors hover:text-ink">Back to top ↑</a>
+        </footer>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Contact;
+}

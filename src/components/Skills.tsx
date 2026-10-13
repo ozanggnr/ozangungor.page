@@ -1,8 +1,10 @@
-import React from 'react';
+import { SectionHeader, Reveal } from './ui';
+import { trackPointer } from './motionUtils';
 
 const skillGroups = [
   {
-    label: '[ Languages ]',
+    label: 'Languages',
+    span: 'md:col-span-2',
     items: [
       { name: 'Kotlin', note: 'Advanced – Android & KMP' },
       { name: 'Python', note: 'FastAPI, scripting, data analysis' },
@@ -12,7 +14,16 @@ const skillGroups = [
     ],
   },
   {
-    label: '[ Frameworks & Technologies ]',
+    label: 'Databases',
+    span: 'md:col-span-1',
+    items: [
+      { name: 'MongoDB', note: 'Document store, indexing, aggregation' },
+      { name: 'PostgreSQL', note: 'Relational, time-series schemas' },
+    ],
+  },
+  {
+    label: 'Frameworks & Technologies',
+    span: 'md:col-span-1',
     items: [
       { name: 'Jetpack Compose', note: 'Modern Android UI' },
       { name: 'Node.js', note: 'REST APIs, backend services' },
@@ -22,14 +33,8 @@ const skillGroups = [
     ],
   },
   {
-    label: '[ Databases ]',
-    items: [
-      { name: 'MongoDB', note: 'Document store, indexing, aggregation' },
-      { name: 'PostgreSQL', note: 'Relational, time-series schemas' },
-    ],
-  },
-  {
-    label: '[ Tools & Platforms ]',
+    label: 'Tools & Platforms',
+    span: 'md:col-span-2',
     items: [
       { name: 'Docker', note: 'Containerization & deployments' },
       { name: 'AWS', note: 'Cloud infrastructure' },
@@ -43,52 +48,50 @@ const skillGroups = [
   },
 ];
 
-const Skills: React.FC = () => {
+export default function Skills() {
   return (
-    <div className="mb-10">
-      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-4 text-sm md:text-lg opacity-80">
-        <span className="text-green-500">visitor@ozangungor</span>
-        <span className="text-white">:</span>
-        <span className="text-blue-400">~</span>
-        <span className="text-white">$</span>
-        <span>./show_skills.sh</span>
-      </div>
+    <section id="skills" className="relative px-6 py-28 md:py-40">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          index="03"
+          label="Skills"
+          title={<>The toolbox, <span className="text-ink-subtle">and the human behind it.</span></>}
+        />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/5 p-4 rounded border border-primary/20">
-        {skillGroups.map((group, gIdx) => (
-          <div key={gIdx}>
-            <h3 className="text-white mb-3 font-bold">{group.label}</h3>
-            <ul className="space-y-2 opacity-90">
-              {group.items.map((item, iIdx) => (
-                <li key={iIdx} className="flex items-start gap-2 text-sm">
-                  <span className="text-primary shrink-0 mt-0.5">▸</span>
-                  <div>
-                    <span className="text-white font-semibold">{item.name}</span>
-                    <span className="opacity-50 ml-2 text-xs">{item.note}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {skillGroups.map((g, gi) => (
+            <Reveal key={g.label} delay={(gi % 2) * 0.08} className={g.span}>
+              <div
+                onMouseMove={trackPointer}
+                className="spotlight h-full rounded-3xl border border-hairline bg-surface-1 p-7"
+              >
+                <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">{g.label}</h3>
+                <ul className={`mt-6 grid gap-x-8 gap-y-4 ${g.span === 'md:col-span-2' ? 'sm:grid-cols-2' : ''}`}>
+                  {g.items.map((it) => (
+                    <li key={it.name}>
+                      <span className="font-medium text-ink">{it.name}</span>
+                      <span className="mt-0.5 block text-sm text-ink-subtle">{it.note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
 
-        {/* Human section */}
-        <div className="md:col-span-2 border-t border-primary/10 pt-4 mt-2">
-          <h3 className="text-white mb-3 font-bold">[ Human ]</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm opacity-90">
-            <div>
-              <span className="text-primary">Spoken Languages</span>
-              <p className="mt-1 opacity-80">Turkish (Native) · English (Proficient) · Spanish (Beginner)</p>
+          <Reveal className="md:col-span-3">
+            <div className="grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2">
+              <div className="bg-surface-1 p-7">
+                <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">Spoken languages</h3>
+                <p className="mt-4 text-ink-muted">Turkish <span className="text-ink-faint">(Native)</span> · English <span className="text-ink-faint">(Proficient)</span> · Spanish <span className="text-ink-faint">(Beginner)</span></p>
+              </div>
+              <div className="bg-surface-1 p-7">
+                <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">Interests</h3>
+                <p className="mt-4 text-ink-muted">American Football · Skating · Running · Hiking · Reading · Guitar</p>
+              </div>
             </div>
-            <div>
-              <span className="text-primary">Interests</span>
-              <p className="mt-1 opacity-80">American Football · Skating · Running · Hiking · Reading · Guitar</p>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Skills;
+}
