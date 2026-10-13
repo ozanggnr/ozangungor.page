@@ -3,19 +3,22 @@
 @import "@fontsource-variable/geist-mono";
 
 @theme {
-  --color-canvas: #010102;
-  --color-surface-1: #0f1011;
-  --color-surface-2: #141516;
-  --color-surface-3: #18191a;
-  --color-hairline: #23252a;
-  --color-hairline-strong: #34343a;
+  --color-canvas: #0a0b1c;
+  --color-surface-1: #111330;
+  --color-surface-2: #181a3c;
+  --color-surface-3: #1e2146;
+  --color-hairline: #262a52;
+  --color-hairline-strong: #3a3f72;
   --color-ink: #f7f8f8;
-  --color-ink-muted: #d0d6e0;
-  --color-ink-subtle: #8a8f98;
-  --color-ink-faint: #62666d;
+  --color-ink-muted: #d5daf0;
+  --color-ink-subtle: #a0a6c4;
+  --color-ink-faint: #737aa0;
   --color-accent: #5e6ad2;
   --color-accent-soft: #828fff;
   --color-success: #27a644;
+  --color-sky: #5cc8ff;
+  --color-violet: #8b5cf6;
+  --color-fuchsia: #d946ef;
 
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
@@ -78,6 +81,15 @@
 }
 
 @layer utilities {
+  .ambient {
+    background:
+      radial-gradient(60vw 50vh at 8% 12%, rgba(94,106,210,0.30), transparent 70%),
+      radial-gradient(50vw 45vh at 95% 30%, rgba(139,92,246,0.22), transparent 70%),
+      radial-gradient(55vw 45vh at 0% 62%, rgba(92,200,255,0.12), transparent 70%),
+      radial-gradient(55vw 50vh at 100% 85%, rgba(217,70,239,0.15), transparent 70%),
+      linear-gradient(180deg, #0d0f26 0%, #0a0b1c 50%, #0c0b22 100%);
+  }
+
   .grain::after {
     content: "";
     position: fixed;

@@ -10,7 +10,7 @@ const links = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden px-6 pb-16 pt-28 md:pt-40">
+    <section id="contact" className="relative overflow-hidden px-6 pb-16 pt-20 md:pt-28">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[60vh] bg-[radial-gradient(ellipse_60%_80%_at_50%_100%,rgba(94,106,210,0.28),transparent)]" />
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
@@ -27,8 +27,8 @@ export default function Contact() {
 
         <ul className="mt-16 grid gap-3 sm:grid-cols-2">
           {links.map((l, i) => (
-            <Reveal key={l.label} delay={i * 0.06} className="contents">
-              <li>
+            <li key={l.label}>
+              <Reveal delay={i * 0.06}>
                 <a
                   href={l.href}
                   onMouseMove={trackPointer}
@@ -41,8 +41,8 @@ export default function Contact() {
                   </span>
                   <span aria-hidden="true" className="text-xl text-ink-subtle transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-ink">↗</span>
                 </a>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ul>
 

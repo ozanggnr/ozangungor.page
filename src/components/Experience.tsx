@@ -37,7 +37,7 @@ export default function Experience() {
   const line = useSpring(scrollYProgress, { stiffness: 120, damping: 28 });
 
   return (
-    <section id="experience" className="relative px-6 py-28 md:py-40">
+    <section id="experience" className="relative px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           index="01"

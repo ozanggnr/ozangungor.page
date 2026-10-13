@@ -22,7 +22,6 @@ export default function Hero() {
         <div className="grid-lines absolute inset-0" />
         <div className="absolute left-1/2 top-[-18%] h-[70vh] w-[90vw] max-w-[1200px] -translate-x-1/2 animate-aurora rounded-full bg-[radial-gradient(closest-side,rgba(94,106,210,0.45),transparent)] blur-3xl will-change-transform" />
         <div className="absolute right-[-10%] top-[20%] h-[50vh] w-[50vw] animate-aurora rounded-full bg-[radial-gradient(closest-side,rgba(217,70,239,0.16),transparent)] blur-3xl [animation-direction:alternate-reverse]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-canvas to-transparent" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl">
@@ -96,7 +95,7 @@ export default function Hero() {
           className="mt-16 grid max-w-3xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-3"
         >
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col bg-canvas/80 p-5 backdrop-blur">
+            <div key={s.label} className="flex flex-col bg-surface-1/70 p-5 backdrop-blur">
               <dt className="order-2 mt-1 text-sm text-ink-subtle">{s.label}</dt>
               <dd className="text-4xl font-semibold tabular-nums tracking-tight text-ink">{s.value}</dd>
             </div>

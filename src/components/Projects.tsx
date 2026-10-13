@@ -125,7 +125,7 @@ export default function Projects() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="relative px-6 py-28 md:py-40">
+    <section id="projects" className="relative px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           index="02"

@@ -1,5 +1,6 @@
 import { SectionHeader, Reveal } from './ui';
 import { trackPointer } from './motionUtils';
+import BeyondCode from './BeyondCode';
 
 const skillGroups = [
   {
@@ -50,7 +51,7 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative px-6 py-28 md:py-40">
+    <section id="skills" className="relative px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           index="03"
@@ -77,20 +78,8 @@ export default function Skills() {
               </div>
             </Reveal>
           ))}
-
-          <Reveal className="md:col-span-3">
-            <div className="grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2">
-              <div className="bg-surface-1 p-7">
-                <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">Spoken languages</h3>
-                <p className="mt-4 text-ink-muted">Turkish <span className="text-ink-faint">(Native)</span> · English <span className="text-ink-faint">(Proficient)</span> · Spanish <span className="text-ink-faint">(Beginner)</span></p>
-              </div>
-              <div className="bg-surface-1 p-7">
-                <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent-soft">Interests</h3>
-                <p className="mt-4 text-ink-muted">American Football · Skating · Running · Hiking · Reading · Guitar</p>
-              </div>
-            </div>
-          </Reveal>
         </div>
+        <BeyondCode />
       </div>
     </section>
   );

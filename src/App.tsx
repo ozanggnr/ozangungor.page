@@ -9,7 +9,8 @@ import Contact from './components/Contact';
 function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="grain relative min-h-screen bg-canvas">
+      <div className="grain relative isolate min-h-screen">
+        <div aria-hidden="true" className="ambient pointer-events-none fixed inset-0 -z-10" />
         <a
           href="#experience"
           className="sr-only z-[80] rounded-md bg-ink px-4 py-2 text-canvas focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
